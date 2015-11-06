@@ -1,4 +1,4 @@
-##Blocmetrics: 
+##Blocmetrics
 
 An analytics service with the following features:
 - a client-side JS snippet that allows a user to track events on their website
