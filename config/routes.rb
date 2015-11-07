@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  root({to: 'welcome#index'})
+
   get 'welcome/index'
   get 'welcome/about'
 
-  root({to: 'welcome#index'})
+  get 'users/new'
+  get 'signup' => 'users#new'
 end
 
 # Example of regular route:
