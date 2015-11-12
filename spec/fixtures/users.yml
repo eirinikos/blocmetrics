@@ -1,0 +1,4 @@
+avocado:
+  name: Avocado Jones
+  email: avocado@jones.org
+  password_digest: <%= User.digest('password') %>

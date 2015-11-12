@@ -17,6 +17,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+div#inner-container {
+  margin-left: 16px;
+}
+
 /* mixins, variables, etc. */
 
 @mixin box_sizing {
