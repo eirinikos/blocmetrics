@@ -1,0 +1,10 @@
+<h3>Add an application</h3>
+<%= form_for(@app) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <label for="registered_application_URL">URL</label>
+  <%= f.text_field :url, class: 'form-control' %>
+
+  <%= f.submit "Register an application", class: "btn btn-primary" %>
+<% end %>

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   resources :users
+  resources :registered_applications, only: [:index, :new, :create, :show, :destroy]  
 end
 
 # Example of regular route:

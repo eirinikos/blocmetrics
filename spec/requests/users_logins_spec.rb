@@ -14,16 +14,14 @@ end
 
 # RSpec.describe "login with valid info, followed by logout,", type: :request do
 #   before do
-#     @user = User.create(name: "Avocado Jones", email: "avocado@jones.com",
-#                         password_digest: "#{User.digest('password')}")
-#   end
+#     @user = users(:avocado)
 
-#   it "allows a new session to be created and then destroyed" do
 #     # returns true if a test user is logged-in
 #     def is_logged_in?
 #       !session[:user_id].nil?
 #     end
-
+#   end
+#   it "allows a new session to be created and then destroyed" do
 #     get login_path
 #     post login_path, session: { email: @user.email, password: 'password' }
 #     assert is_logged_in?
