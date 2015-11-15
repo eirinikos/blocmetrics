@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   # returns the hash digest of the given string
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  Bcrypt::Engine.cost
+                                                  BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
 
@@ -38,8 +38,14 @@ class User < ActiveRecord::Base
   end
 
   # returns true if the given token matches the digest
-  def authenticated?
+  def authenticated?(remember_token)
+    return false if remember_digest.nil?
     BCrypt::Password.new(self.remember_digest).is_password?(remember_token)
     # (this local remember_token variable is not the same as the :remember_token accessor)
+  end
+
+  # forgets a user
+  def forget
+    update_attribute(:remember_digest, nil)
   end
 end

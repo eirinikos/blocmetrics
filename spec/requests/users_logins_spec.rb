@@ -34,6 +34,8 @@ end
 #     delete logout_path
 #     expect(is_logged_in?).to be(false)
 #     assert_redirected_to root_url
+#     # simulate a user clicking logout in a second window
+#     delete logout_path
 #     follow_redirect!
 #     assert_select "a[href=?]", login_path
 #     assert_select "a[href=?]", logout_path, count: 0

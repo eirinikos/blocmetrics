@@ -76,5 +76,10 @@ describe User do
         expect( @user.valid? ).to be(false)
       end
     end
+
+    # describe "authenticated?" do
+    #   it "should return false for a user with nil digest" do
+    #   end
+    # end
   end
 end
