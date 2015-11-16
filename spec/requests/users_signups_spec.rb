@@ -29,7 +29,7 @@ RSpec.describe "valid signup information", type: :request do
                               password_confirmation: "foobar" }
     after_count = User.count
     expect(after_count).to eq(1)
-    assert_template 'users/show'
+    assert_template registered_applications_path
     assert is_logged_in?
   end
 end
