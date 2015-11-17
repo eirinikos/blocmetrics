@@ -1,0 +1,3 @@
+<p><%= link_to "", registered_application_path(registered_application), method: :delete, class: 'glyphicon glyphicon-remove-circle', data: { confirm: "Are you sure you want to remove this application?" }%>
+<%= link_to registered_application.name, registered_application_path(registered_application) %></p>
+<h5><small><%= registered_application.url %></small></h5>

@@ -1,5 +1,6 @@
 <h3>Add an application</h3>
 <%= form_for(@app) do |f| %>
+  <%= render 'shared/app_error_messages' %>
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>
 

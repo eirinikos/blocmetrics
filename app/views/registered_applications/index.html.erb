@@ -1,3 +1,5 @@
 <h3><%= current_user.name %>, here are your apps:</h3><br />
 
-<%= render 'registered_applications' %>
+<%= render @registered_applications %>
+
+<%= will_paginate %>

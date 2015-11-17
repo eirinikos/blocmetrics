@@ -1,5 +1,6 @@
 class RegisteredApplicationsController < ApplicationController
   def index
+    @registered_applications = current_user.registered_applications.paginate(page: params[:page], :per_page => 6)
   end
 
   def show
@@ -16,7 +17,6 @@ class RegisteredApplicationsController < ApplicationController
       flash[:success] = "Success!"
       redirect_to registered_applications_path
     else
-      flash.now[:warning] = "Please enter a valid name and URL."
       render 'new'
     end
   end
@@ -24,7 +24,7 @@ class RegisteredApplicationsController < ApplicationController
   def destroy
     @app = RegisteredApplication.find(params[:id])
     if @app.destroy
-      flash[:success] = "Removed!"
+      flash[:success] = "#{@app.name} has been removed from your dashboard!"
       redirect_to registered_applications_path
     else
       flash[:warning] = "Try again!"
