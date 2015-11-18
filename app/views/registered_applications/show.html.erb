@@ -1,1 +1,7 @@
-<h3><%= link_to @app.name, @app.url %></h3>
+<h3><%= link_to @app.name, @app.url %></h3><br />
+
+<h4>Events...</h4>
+
+<% @app.events.each do |event| %>
+  <p><%= event.name%></p>
+<% end %>
