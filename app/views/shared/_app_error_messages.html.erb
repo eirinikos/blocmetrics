@@ -4,14 +4,9 @@
       The form contains <%= pluralize(@app.errors.count, "error") %>.
     </div>
     <ul>
-      <% @app.errors.full_messages_for(:name).each do |name_msg| %>
-        <li><%= name_msg %></li><% end %>
-      <% array = @app.errors.full_messages_for(:url) %>
-      <% array.each_index.map { |i| %>
-        <% split_array = array[i].split %>
-        <% split_array[0].replace("URL") %>
-        <% split_array.join(" ") }.each do |url_msg| %>
-          <li><%= url_msg %></li><% end %>
+      <% @app.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
     </ul>
   </div>
 <% end %>

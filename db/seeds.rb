@@ -10,6 +10,10 @@ require 'faker'
     password_confirmation: "foobar")
 end
 
+user = User.first.update_attributes!(
+  name: "Andrea",
+  email: "andrealankao@gmail.com")
+
 user = User.last.update_attributes!(
   name: "Avocado",
   email: "eirinikos@gmail.com")
@@ -18,27 +22,38 @@ users = User.all
 
 # create applications
 
-5.times do
+3.times do
   RegisteredApplication.create!(
     user: users.sample,
     name: Faker::Team.creature,
     url: "http://#{Faker::Team.creature}.io")
 end
 
-5.times do
+3.times do
   RegisteredApplication.create!(
     user: users.sample,
     name: Faker::Hacker.verb,
     url: "http://#{Faker::Hacker.verb}.io")
 end
 
-5.times do
+3.times do
   RegisteredApplication.create!(
     user: users.sample,
     name: Faker::Lorem.word,
     url: "http://#{Faker::Lorem.word}.io")
 end
 
+apps = RegisteredApplication.all
+
+# create events
+
+18.times do
+  Event.create!(
+    registered_application: apps.sample,
+    name: "#{Faker::Hacker.verb} the #{Faker::Hacker.noun}")
+end
+
 puts "C'est fini!"
-puts "#{User.count} utilisateurs ont été crées!"
-puts "#{RegisteredApplication.count} applications ont été crées!"
+puts "#{User.count} utilisateurs ont été créés!"
+puts "#{RegisteredApplication.count} applications ont été créés!"
+puts "#{Event.count} évènements ont été créés!"

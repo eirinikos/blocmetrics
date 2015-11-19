@@ -1,5 +1,6 @@
 class RegisteredApplication < ActiveRecord::Base
   belongs_to :user
+  has_many :events
 
   # VALID_URL_REGEX =
 

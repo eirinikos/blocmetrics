@@ -1,1 +1,7 @@
 <h3><%= link_to @app.name, @app.url %></h3>
+
+<h4><small>has a total of <%= pluralize(@events.count, "event") %>...</small></h4>
+
+<% @events.each do |key, value| %>
+  <li><%= key %>, <%= pluralize(value.count, "occurrence") %></li>
+<% end %>
