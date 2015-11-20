@@ -2,6 +2,6 @@
 
 <h4><small>has a total of <%= pluralize(@events.count, "event") %>...</small></h4>
 
-<%= line_chart @app.events.group_by_day(:created_at).count %>
+<%= line_chart @app.events.group_by_day(:created_at, range: 1.month.ago..Time.now).count %>
 
 <%= pie_chart @app.events.group(:name).count %>

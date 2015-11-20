@@ -33,7 +33,7 @@ class UsersController < ApplicationController
         render 'edit'
       end
     else
-      flash[:alert] = "Please enter your current password."
+      flash[:warning] = "Please enter your current password."
       render 'edit'
     end
   end
