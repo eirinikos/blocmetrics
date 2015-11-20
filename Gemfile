@@ -32,8 +32,9 @@ group :production do
 end
 
 group :development do
+  gem 'pg'
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  # gem 'sqlite3'
 end
 
 group :development, :test do
@@ -58,3 +59,6 @@ gem 'puma'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'chartkick'
+gem 'groupdate'
+gem 'tilt', '~> 1.4.1'

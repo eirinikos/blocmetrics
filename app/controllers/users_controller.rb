@@ -25,10 +25,15 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params)
-      flash[:success] = "Success!"
-      redirect_to registered_applications_path
+    if current_user.authenticate(params[:user][:current_password])
+      if @user.update_attributes(user_params)
+        flash[:success] = "Success!"
+        redirect_to edit_user_path(current_user)
+      else
+        render 'edit'
+      end
     else
+      flash[:alert] = "Please enter your current password."
       render 'edit'
     end
   end
