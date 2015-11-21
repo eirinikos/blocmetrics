@@ -11,7 +11,12 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   resources :users
-  resources :registered_applications, only: [:index, :new, :create, :show, :destroy]  
+  resources :registered_applications, only: [:index, :new, :create, :show, :destroy] 
+
+  namespace :api, defaults: { format: :json } do # expect to receive JSON requests
+    match '/events', to: 'events#index', via: [:options]
+    resources :events, only: [:create]
+  end 
 end
 
 # Example of regular route:

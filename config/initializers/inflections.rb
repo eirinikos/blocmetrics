@@ -2,6 +2,7 @@
 
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.acronym 'URL'
+  inflect.acronym 'API'
 end
 
 # Add new inflection rules using the following format. Inflections
