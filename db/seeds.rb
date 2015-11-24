@@ -7,7 +7,9 @@ require 'faker'
     name: Faker::Name.name,
     email: "#{Faker::Team.creature}@gmail.com",
     password: "foobar",
-    password_confirmation: "foobar")
+    password_confirmation: "foobar",
+    activated: true,
+    activated_at: Time.zone.now)
 end
 
 user = User.first.update_attributes!(
@@ -22,21 +24,21 @@ users = User.all
 
 # create applications
 
-3.times do
+2.times do
   RegisteredApplication.create!(
     user: users.sample,
     name: Faker::Team.creature,
     url: "http://#{Faker::Team.creature}.io")
 end
 
-3.times do
+2.times do
   RegisteredApplication.create!(
     user: users.sample,
     name: Faker::Hacker.verb,
     url: "http://#{Faker::Hacker.verb}.io")
 end
 
-3.times do
+2.times do
   RegisteredApplication.create!(
     user: users.sample,
     name: Faker::Lorem.word,
@@ -50,7 +52,8 @@ apps = RegisteredApplication.all
 18.times do
   Event.create!(
     registered_application: apps.sample,
-    name: "#{Faker::Hacker.verb} the #{Faker::Hacker.noun}")
+    name: "#{Faker::Hacker.verb} the #{Faker::Hacker.noun}",
+    created_at: Time.zone.now)
 end
 
 puts "C'est fini!"

@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
 
   has_many :registered_applications
 
-  before_save { self.email = email.downcase }
-  # before_update { authenticate(:password) }
+  before_save :downcase_email
+  before_create :create_activation_digest
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   # this still allows invalid addresses that contain consecutive dots...
@@ -52,5 +52,17 @@ class User < ActiveRecord::Base
   # forgets a user
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  private
+
+  def downcase_email
+    self.email = email.downcase
+  end
+
+  # creates & assigns the activation token & digest
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
   end
 end
