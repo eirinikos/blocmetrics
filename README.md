@@ -19,3 +19,5 @@ https://cdn.rawgit.com/eirinikos/blocmetrics/master/blocmetrics_clientside_snipp
 
 Per [this Stack Overflow discussion](http://stackoverflow.com/questions/17341122/link-and-execute-external-javascript-file-hosted-on-github/18049842#18049842):
 *GitHub started using X-Content-Type-Options: nosniff, which instructs more modern browsers to enforce strict MIME type checking. It then returns the raw files in a MIME type returned by the server - preventing the browser from using the file as-intended (if the browser honors the setting).*
+
+I'll be updating this README with some example scripts for tracking events like page views, button clicks, link clicks, etc.
