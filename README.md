@@ -8,13 +8,12 @@ An analytics service with the following features:
 Made with my mentor at [Bloc](http://bloc.io).
 
 ####User authentication, session control, account activation, password reset
-I relied heavily on [Michael Hartl's Rails tutorial](https://www.railstutorial.org/book/frontmatter) to implement these features. I also tried to implement some testing - insofar as I was able to use RSpec without diverging too far from the tutorial's code (which uses Rails' built-in `minitest`).
-
-Anyway - very grateful to have had this resource on hand.
+I relied (heavily, gratefully) on [Michael Hartl's Rails tutorial](https://www.railstutorial.org/book/frontmatter) to implement these features. I also tried to implement some testing - insofar as I was able to use RSpec without diverging too far from the tutorial's code (which uses Rails' built-in `minitest`).
 
 ####Updating a registered application
 At the moment, a user's website/application can be created, destroyed, and shown, but not edited (the "Update an application" link currently leads nowhere, as shown below). Working on this!
 
+```
 <li class="dropdown">
   <a href='#' class="dropdown-toggle" data-toggle="dropdown">
     Applications <b class="caret"></b>
@@ -26,6 +25,7 @@ At the moment, a user's website/application can be created, destroyed, and shown
     <li><%= link_to "Update an application", '#' %></li>
   </ul>
 </li>
+```
 
 ####The client-side JS snippet
 This is stored [right here on Github](https://raw.githubusercontent.com/eirinikos/blocmetrics/master/blocmetrics_clientside_snippet.js).
