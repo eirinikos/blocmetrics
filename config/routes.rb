@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
   resources :registered_applications, only: [:index, :new, :create, :show, :destroy] 
 
   namespace :api, defaults: { format: :json } do # expect to receive JSON requests
