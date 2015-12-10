@@ -8,7 +8,7 @@ An analytics service with the following features:
 Made with my mentor at [Bloc](http://bloc.io).
 
 ####Lovely Javascript charts
-The pie and line charts are enabled by [Chartkick](https://github.com/ankane/chartkick) and [Groupdate](https://github.com/ankane/groupdate), which makes it easy to group temporal data. 
+The pie and line charts are enabled by [Chartkick](https://github.com/ankane/chartkick). [Groupdate](https://github.com/ankane/groupdate)works hand-in-hand with Chartkick and makes it easy to group temporal data. 
 
 ####User authentication, session control, account activation, password reset
 I relied (heavily, gratefully) on [Michael Hartl's Rails tutorial](https://www.railstutorial.org/book/frontmatter) to implement these features. I also tried to implement some testing - insofar as I was able to use RSpec without diverging too far from the tutorial's code (which uses Rails' built-in `minitest`).
